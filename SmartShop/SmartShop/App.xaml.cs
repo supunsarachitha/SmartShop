@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SmartShop.View;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -8,9 +9,11 @@ namespace SmartShop
     {
         public App()
         {
+
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MjYzMzAxQDMxMzgyZTMxMmUzMFh5VVhHdUg0MmhPUXpSK05zWkppSEZwTTlsL3FxM3lteFhYRlFIYjZSS1U9");
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new Login();
         }
 
         protected override void OnStart()

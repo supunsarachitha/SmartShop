@@ -77,10 +77,14 @@
     <Compile Include="SplashActivity.cs" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\shop.json" />
     <AndroidAsset Include="Assets\19497-we-are-open-online-shop.json" />
     <AndroidAsset Include="Assets\9796-shop-loading.json" />
     <AndroidAsset Include="Assets\890-loading-animation.json" />
+    <AndroidAsset Include="Assets\Login.json" />
+    <AndroidAsset Include="Assets\3616-shopping-bag.json" />
+    <AndroidAsset Include="Assets\18134-facial-recognition.json" />
+    <AndroidAsset Include="Assets\23730-3d-mobile-payment.json" />
+    <AndroidAsset Include="Assets\19724-support-help-customer-service.json" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
@@ -103,9 +107,7 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\drawable\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\SmartShop\SmartShop.csproj">
       <Project>{62C6E314-33F3-44E5-A7BF-6BA5E2A63F34}</Project>
@@ -114,6 +116,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Activity_Splash.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\loginImage.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
