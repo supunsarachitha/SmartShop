@@ -10,21 +10,19 @@ using Xamarin.Forms.Xaml;
 namespace SmartShop.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Login : ContentPage
+    public partial class Home : ContentPage
     {
-        public Login()
+        public Home()
         {
             InitializeComponent();
         }
 
-        private async void btnLogin_Clicked(object sender, EventArgs e)
+        protected override bool OnBackButtonPressed()
         {
-            busyIndi.IsVisible = true;
-
-            await Task.Delay(1000);
-
-            Application.Current.MainPage = new NavigationPage(new Home());
-            busyIndi.IsVisible = true;
+            
+            return base.OnBackButtonPressed();
         }
     }
+
+
 }
