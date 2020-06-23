@@ -1,5 +1,6 @@
 ﻿using SmartShop.Model;
 using SmartShop.ViewModel;
+using Syncfusion.DataSource;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -18,25 +19,73 @@ namespace SmartShop.View
 
         AddNewItemsViewModel VM = new AddNewItemsViewModel();
 
+        ObservableCollection<ItemDetail> itemDetailCollection = new ObservableCollection<ItemDetail>();
+
         public AddNewItems()
         {
             InitializeComponent();
-            BindingContext = VM;
+            //BindingContext = VM;
 
 
-            ObservableCollection<ItemDetail> itemDetailCollection = new ObservableCollection<ItemDetail>();
-            itemDetailCollection.Add(new ItemDetail(1,"A","des",100));
-            itemDetailCollection.Add(new ItemDetail(1, "B", "des", 100));
-            itemDetailCollection.Add(new ItemDetail(1, "C", "des", 100));
-            itemDetailCollection.Add(new ItemDetail(1, "D", "des", 100));
-            itemDetailCollection.Add(new ItemDetail(1, "E", "des", 100));
-            itemDetailCollection.Add(new ItemDetail(1, "F", "des", 100));
+            
+            itemDetailCollection.Add(new ItemDetail(1,"Apple","des",100));
+            itemDetailCollection.Add(new ItemDetail(1, "Banana", "des", 100));
+            itemDetailCollection.Add(new ItemDetail(1, "Coco", "des", 100));
+            itemDetailCollection.Add(new ItemDetail(1, "Doorian", "des", 100));
+            itemDetailCollection.Add(new ItemDetail(1, "Egg", "des", 100));
+            itemDetailCollection.Add(new ItemDetail(1, "Fruits", "des", 100));
 
 
             NewItemsList.ItemsSource = itemDetailCollection;
 
+
+
+            NewItemsList.DataSource.GroupDescriptors.Add(new GroupDescriptor()
+            {
+                PropertyName = "ItemName",
+                KeySelector = (object obj1) =>
+                {
+                    var item = (obj1 as ItemDetail);
+                    return item.ItemName[0].ToString();
+                }
+                //Comparer = new CustomGroupComparer()
+            });
+
         }
 
+        private void ContactInfo_Tapped(object sender, EventArgs e)
+        {
 
+        }
+
+        private void ViewProfile_Tapped(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SearchEntry_Unfocused(object sender, FocusEventArgs e)
+        {
+            try
+            {
+
+                if (SearchEntry.Text != null || SearchEntry.Text.Trim() != "")
+                {
+                    if (SearchEntry.Text.Trim().Length > 0)
+                    {
+                        var searchedResult = itemDetailCollection.Where(x => x.ItemName.ToLower().Contains(SearchEntry.Text.ToLower())).ToList();
+                        NewItemsList.ItemsSource = searchedResult;
+                    }
+
+                }
+                else
+                {
+                    NewItemsList.ItemsSource = itemDetailCollection;
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
     }
 }

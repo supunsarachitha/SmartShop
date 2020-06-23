@@ -10,7 +10,7 @@ namespace SmartShop
         public App()
         {
 
-            
+           
             InitializeComponent();
 
             MainPage = new AddNewItems();
