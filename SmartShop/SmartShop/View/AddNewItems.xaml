@@ -91,11 +91,11 @@
                                     <Image Grid.Column="0" 
                                            Grid.Row="0"
                                            BackgroundColor="Transparent"
-                                           Source="contactwhite.png"
+                                           Source="baseline_info_24.xml"
                                            VerticalOptions="Center"/>
                                     <Label Grid.Column="1" 
                                            Grid.Row="0" 
-                                           Text="Contact Info" 
+                                           Text="Item info" 
                                            TextColor="White"
                                            VerticalOptions="Center"
                                            FontSize="Micro"/>
@@ -111,7 +111,7 @@
                 <syncfusion:SfListView.RightSwipeTemplate>
                     <DataTemplate x:Name="RightSwipeTemplate">
                         <Grid>
-                            <Grid BackgroundColor="#FFB237" HorizontalOptions="Fill" VerticalOptions="Fill" Grid.Column="0">
+                            <Grid BackgroundColor="HotPink"  HorizontalOptions="Fill" VerticalOptions="Fill" Grid.Column="0">
                                 <Grid VerticalOptions="Center" HorizontalOptions="Center">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="auto"/>
@@ -123,11 +123,11 @@
                                     <Image Grid.Column="0" 
                                            Grid.Row="0"
                                            BackgroundColor="Transparent"
-                                           Source="profile.png"
+                                           Source="baseline_delete_24.xml"
                                            VerticalOptions="Center"/>
                                     <Label Grid.Column="1" 
                                            Grid.Row="0" 
-                                           Text="View Profile" 
+                                           Text="Delete" 
                                            TextColor="White"
                                            VerticalOptions="Center"
                                            FontSize="Micro"/>

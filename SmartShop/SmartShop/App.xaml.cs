@@ -10,7 +10,7 @@ namespace SmartShop
         public App()
         {
 
-           
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MjYzMzAxQDMxMzgyZTMxMmUzMFh5VVhHdUg0MmhPUXpSK05zWkppSEZwTTlsL3FxM3lteFhYRlFIYjZSS1U9");
             InitializeComponent();
 
             MainPage = new AddNewItems();
