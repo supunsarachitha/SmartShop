@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms" xmlns:zxcm="clr-namespace:ZXing.Common;assembly=zxing.portable"
+             mc:Ignorable="d"
+             x:Class="SmartShop.View.QRCodeMaker">
+
+    <ScrollView>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+
+            <Grid VerticalOptions="Center" Padding="10">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="400"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="0">
+                    <zxing:ZXingBarcodeImageView x:Name="BarcodeImage" WidthRequest="300" HeightRequest="100" BarcodeValue="0" BarcodeFormat="CODE_39">
+                        <zxing:ZXingBarcodeImageView.BarcodeOptions>
+                            <zxcm:EncodingOptions Width="300" Height="100" />
+                        </zxing:ZXingBarcodeImageView.BarcodeOptions>
+                    </zxing:ZXingBarcodeImageView>
+                    <zxing:ZXingBarcodeImageView x:Name="qrImage" WidthRequest="300" HeightRequest="300"  BarcodeValue="0" BarcodeFormat="QR_CODE">
+                        <zxing:ZXingBarcodeImageView.BarcodeOptions>
+                            <zxcm:EncodingOptions Width="300" Height="300" />
+                        </zxing:ZXingBarcodeImageView.BarcodeOptions>
+                    </zxing:ZXingBarcodeImageView>
+                    <zxing:ZXingBarcodeImageView WidthRequest="300" IsVisible="false" HeightRequest="100" BarcodeValue="1337133713378" BarcodeFormat="EAN_13">
+                        <zxing:ZXingBarcodeImageView.BarcodeOptions>
+                            <zxcm:EncodingOptions Width="300" Height="100" />
+                        </zxing:ZXingBarcodeImageView.BarcodeOptions>
+                    </zxing:ZXingBarcodeImageView>
+                </StackLayout>
+
+
+
+                <RadioButton Text="QR" IsChecked="true" GroupName="type" Grid.Row="1" Grid.Column="1" x:Name="QRrad" CheckedChanged="QRrad_CheckedChanged" />
+                <RadioButton Text="Barcode" GroupName="type" Grid.Row="1"  Grid.Column="2" x:Name="barCodeRad" />
+                
+                <Entry Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="2" x:Name="txtInputvalue" Text="test" TextChanged="txtInputvalue_TextChanged"></Entry>
+
+            </Grid>
+
+
+            
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

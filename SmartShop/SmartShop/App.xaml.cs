@@ -13,7 +13,7 @@ namespace SmartShop
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MjYzMzAxQDMxMzgyZTMxMmUzMFh5VVhHdUg0MmhPUXpSK05zWkppSEZwTTlsL3FxM3lteFhYRlFIYjZSS1U9");
             InitializeComponent();
 
-            MainPage = new Home();
+            MainPage = new Login();
         }
 
         protected override void OnStart()

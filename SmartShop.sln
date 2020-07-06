@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartShop.Android", "SmartS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartShop.iOS", "SmartShop\SmartShop.iOS\SmartShop.iOS.csproj", "{F27EF13F-85C7-4378-B2AC-55E7628E2CD1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartShop", "SmartShop\SmartShop\SmartShop.csproj", "{4D4E8035-63CB-4676-ADAA-33CD71AC56C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartShop", "SmartShop\SmartShop\SmartShop.csproj", "{4D4E8035-63CB-4676-ADAA-33CD71AC56C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,8 +38,6 @@ Global
 		{1B5540B6-F68B-41C4-87C0-037AE66454F8}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{1B5540B6-F68B-41C4-87C0-037AE66454F8}.Release|iPhoneSimulator.Deploy.0 = Release|Any CPU
 		{F27EF13F-85C7-4378-B2AC-55E7628E2CD1}.Debug|Any CPU.ActiveCfg = Debug|iPhone
-		{F27EF13F-85C7-4378-B2AC-55E7628E2CD1}.Debug|Any CPU.Build.0 = Debug|iPhone
-		{F27EF13F-85C7-4378-B2AC-55E7628E2CD1}.Debug|Any CPU.Deploy.0 = Debug|iPhone
 		{F27EF13F-85C7-4378-B2AC-55E7628E2CD1}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{F27EF13F-85C7-4378-B2AC-55E7628E2CD1}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
 		{F27EF13F-85C7-4378-B2AC-55E7628E2CD1}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator

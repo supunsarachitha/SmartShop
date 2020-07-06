@@ -22,6 +22,12 @@ namespace SmartShop.View
             
             return base.OnBackButtonPressed();
         }
+
+        private async void CreateQRCode_Clicked(object sender, EventArgs e)
+        {
+
+            await Navigation.PushAsync(new QRCodeMaker());
+        }
     }
 
 

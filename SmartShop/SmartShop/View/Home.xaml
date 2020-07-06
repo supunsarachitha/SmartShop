@@ -25,7 +25,7 @@
             <ImageButton Grid.Column="2" Grid.Row="1" CornerRadius="50" Padding="20" Source="list.png" HeightRequest="100" WidthRequest="100"  BackgroundColor="Aqua"></ImageButton>
             <ImageButton Grid.Column="1" Grid.Row="2" CornerRadius="50" Padding="20" Source="truck.png" HeightRequest="100" WidthRequest="100"  BackgroundColor="Aqua"></ImageButton>
 
-            <ImageButton Grid.Column="0" Grid.Row="3" CornerRadius="50" Padding="20" Source="CreateQR.png" HeightRequest="100" WidthRequest="100"  BackgroundColor="Aqua"></ImageButton>
+            <ImageButton Grid.Column="0" Grid.Row="3" CornerRadius="50" Padding="20" Source="CreateQR.png" HeightRequest="100" WidthRequest="100"  BackgroundColor="Aqua" x:Name="CreateQRCode" Clicked="CreateQRCode_Clicked"></ImageButton>
             <ImageButton Grid.Column="2" Grid.Row="3" CornerRadius="50" Padding="20" Source="discount.png" HeightRequest="100" WidthRequest="100"  BackgroundColor="Aqua"></ImageButton>
         </Grid>
     </ContentPage.Content>
