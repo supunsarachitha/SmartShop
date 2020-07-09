@@ -45,5 +45,7 @@ namespace SmartShop.Droid
         public void OnAnimationStart(Animator animation)
         {
         }
+
+
     }
 }

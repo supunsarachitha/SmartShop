@@ -15,6 +15,7 @@ namespace SmartShop.View
         public Home()
         {
             InitializeComponent();
+            
         }
 
         protected override bool OnBackButtonPressed()
@@ -27,6 +28,16 @@ namespace SmartShop.View
         {
 
             await Navigation.PushAsync(new QRCodeMaker());
+        }
+
+        private void ImageButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void btnItemList_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AddNewItems());
         }
     }
 

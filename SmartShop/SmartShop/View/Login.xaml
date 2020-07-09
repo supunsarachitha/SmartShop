@@ -138,7 +138,7 @@
 
             </Grid>
 
-            <StackLayout IsVisible="False" x:Name="busyIndi" BackgroundColor="White" Opacity="1" Orientation="Vertical">
+            <StackLayout IsVisible="False" x:Name="busyIndi" BackgroundColor="White" Opacity="0.9" Orientation="Vertical" >
                 <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
                     <forms:AnimationView x:Name="AnimationView"
                          Animation="890-loading-animation.json"

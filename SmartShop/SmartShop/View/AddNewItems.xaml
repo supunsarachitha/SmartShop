@@ -141,6 +141,7 @@
                 </syncfusion:SfListView.RightSwipeTemplate>
             </syncfusion:SfListView>
 
+<Button Grid.Row="1" Text="+" FontSize="Large"  BorderColor="#2b3c3c" BorderWidth="0.1" FontAttributes="Bold" BackgroundColor="#4ba862" BorderRadius="35" TextColor="White" HorizontalOptions="End" WidthRequest="70" HeightRequest="70" Margin="0,0,20,22" VerticalOptions="End" x:Name="btnAdd" Clicked="btnAdd_Clicked"/>
 
         </Grid>
 

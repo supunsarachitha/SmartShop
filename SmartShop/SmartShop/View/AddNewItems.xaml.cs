@@ -87,5 +87,10 @@ namespace SmartShop.View
 
             }
         }
+
+        private void btnAdd_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }
