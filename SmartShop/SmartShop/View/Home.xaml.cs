@@ -39,6 +39,11 @@ namespace SmartShop.View
         {
             await Navigation.PushAsync(new AddNewItems());
         }
+
+        private async void Stock_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new StockPage());
+        }
     }
 
 

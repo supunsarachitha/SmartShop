@@ -1,4 +1,5 @@
-﻿using SmartShop.View;
+﻿using SmartShop.Data;
+using SmartShop.View;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -26,6 +27,20 @@ namespace SmartShop
 
         protected override void OnResume()
         {
+        }
+
+
+        static ShopDatabase database;
+        public static ShopDatabase Database
+        {
+            get
+            {
+                if (database == null)
+                {
+                    database = new ShopDatabase();
+                }
+                return database;
+            }
         }
     }
 }

@@ -102,7 +102,7 @@
                                 </Grid>
                             </Grid>
                             <Grid.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="ContactInfo_Tapped"/>
+                                <TapGestureRecognizer Tapped="Info_Tapped"/>
                             </Grid.GestureRecognizers>
                         </Grid>
                     </DataTemplate>
@@ -134,7 +134,7 @@
                                 </Grid>
                             </Grid>
                             <Grid.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="ViewProfile_Tapped"/>
+                                <TapGestureRecognizer x:Name="delete" Tapped="delete_Tapped" />
                             </Grid.GestureRecognizers>
                         </Grid>
                     </DataTemplate>

@@ -1,4 +1,5 @@
-﻿using SmartShop.Model;
+﻿using Rg.Plugins.Popup.Extensions;
+using SmartShop.Model;
 using SmartShop.ViewModel;
 using Syncfusion.DataSource;
 using System;
@@ -11,6 +12,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+
 namespace SmartShop.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -19,7 +21,7 @@ namespace SmartShop.View
 
         AddNewItemsViewModel VM = new AddNewItemsViewModel();
 
-        ObservableCollection<ItemDetail> itemDetailCollection = new ObservableCollection<ItemDetail>();
+        ObservableCollection<ItemList> itemDetailCollection = new ObservableCollection<ItemList>();
 
         public AddNewItems()
         {
@@ -27,41 +29,58 @@ namespace SmartShop.View
             //BindingContext = VM;
 
 
+            bindData(false);
+
+        }
+
+        private async void OnCallback(object sender, object e)
+        {
+            bindData(true);
+        }
+
+        private async void bindData(bool Isrefresh)
+        {
+           
             
-            itemDetailCollection.Add(new ItemDetail(1,"Apple","des",100));
-            itemDetailCollection.Add(new ItemDetail(1, "Banana", "des", 100));
-            itemDetailCollection.Add(new ItemDetail(1, "Coco", "des", 100));
-            itemDetailCollection.Add(new ItemDetail(1, "Doorian", "des", 100));
-            itemDetailCollection.Add(new ItemDetail(1, "Egg", "des", 100));
-            itemDetailCollection.Add(new ItemDetail(1, "Fruits", "des", 100));
-
-
-            NewItemsList.ItemsSource = itemDetailCollection;
-
-
-
-            NewItemsList.DataSource.GroupDescriptors.Add(new GroupDescriptor()
+            //NewItemsList.ItemsSource = itemDetailCollection;
+           
+            var ListItems = await App.Database.GetItemsAsync();
+            NewItemsList.ItemsSource = ListItems;
+            foreach (var item in ListItems)
             {
-                PropertyName = "ItemName",
-                KeySelector = (object obj1) =>
+
+                ItemList list = new ItemList()
                 {
-                    var item = (obj1 as ItemDetail);
-                    return item.ItemName[0].ToString();
-                }
-                //Comparer = new CustomGroupComparer()
-            });
+                    ItemDescription = item.ItemDescription,
+                    ItemName = item.ItemName,
+                    ItemId = item.ItemId
+                };
 
+                itemDetailCollection.Add(list);
+            }
+
+            if (!Isrefresh)
+            {
+                NewItemsList.DataSource.GroupDescriptors.Add(new GroupDescriptor()
+                {
+                    PropertyName = "ItemName",
+                    KeySelector = (object obj1) =>
+                    {
+                        var item = (obj1 as ItemList);
+                        return item.ItemName[0].ToString();
+                    }
+                    //Comparer = new CustomGroupComparer()
+                });
+            }
+            
         }
 
-        private void ContactInfo_Tapped(object sender, EventArgs e)
+        private void Info_Tapped(object sender, EventArgs e)
         {
-
+            ItemList l = (ItemList)((Grid)sender).BindingContext;
+            DisplayAlert(l.ItemName, l.ItemDescription, "close");
         }
 
-        private void ViewProfile_Tapped(object sender, EventArgs e)
-        {
-
-        }
 
         private void SearchEntry_Unfocused(object sender, FocusEventArgs e)
         {
@@ -88,9 +107,36 @@ namespace SmartShop.View
             }
         }
 
-        private void btnAdd_Clicked(object sender, EventArgs e)
+        private async void btnAdd_Clicked(object sender, EventArgs e)
         {
 
+            var popupPage = new AddNewItemPopup();
+            popupPage.CallbackEvent += OnCallback;
+            await Navigation.PushPopupAsync(popupPage, true);
         }
+
+        private async void delete_Tapped(object sender, EventArgs e)
+        {
+            try
+            {
+
+                ItemList l = (ItemList)((Grid)sender).BindingContext;
+                await App.Database.DeleteItemAsync(l);
+                NewItemsList.ItemsSource = await App.Database.GetItemsAsync();
+            }
+            catch (Exception)
+            {
+
+                return;
+            }
+            
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+        }
+
+
     }
 }
