@@ -1,2 +1,2 @@
 # SmartShop
-Management solution for small shops
+Open source Store Management solution for small shops
