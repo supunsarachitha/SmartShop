@@ -1,4 +1,3 @@
-
 # 🛒 SmartShop
 
 **SmartShop** is an open-source store management solution designed for small shops. Built with C#, this mobile application helps streamline inventory tracking, barcode handling, and basic stock operations.
