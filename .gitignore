@@ -338,3 +338,6 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+.vscode/settings.json
+SmartShop/SmartShop.Android/Resources/Resource.designer.cs
+SmartShop/SmartShop.Android/Resources/Resource.designer.cs
